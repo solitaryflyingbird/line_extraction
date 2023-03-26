@@ -1,6 +1,7 @@
 from PIL import Image
 import os
-def create_black_and_white_image(image_path, output_path, threshold= 256):
+
+def create_black_and_white_image(image_path, output_path, threshold=256):
     # Load the image
     img = Image.open(image_path).convert("L")
 
@@ -27,6 +28,8 @@ def create_black_and_white_image(image_path, output_path, threshold= 256):
 # Example usage
 input_image = "input.png"
 output_image = "output.png"
+
 script_dir = os.path.dirname(os.path.realpath(__file__))
-image_path = os.path.join(script_dir, input_image)
-create_black_and_white_image(input_image, output_image , 256)
+input_image_path = os.path.join(script_dir, input_image)
+output_image_path = os.path.join(script_dir, output_image)
+create_black_and_white_image(input_image_path, output_image_path , 256)
